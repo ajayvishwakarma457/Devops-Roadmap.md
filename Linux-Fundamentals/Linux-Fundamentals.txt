@@ -1,0 +1,109 @@
+✅ Linux Fundamentals – Industry Essentials
+
+🔹 1. Linux File System Structure
+Understand the purpose of each key directory:
+
+| Directory          | Purpose                    |
+| ------------------ | -------------------------- |
+| `/`                | Root directory             |
+| `/home`            | User home directories      |
+| `/etc`             | System configuration files |
+| `/var`             | Logs and variable files    |
+| `/bin`, `/usr/bin` | System/user binaries       |
+| `/lib`, `/usr/lib` | Shared libraries           |
+| `/tmp`             | Temporary files            |
+
+
+🔹 2. Basic Linux Commands
+| Task          | Commands                                       |
+| ------------- | ---------------------------------------------- |
+| File ops      | `ls`, `cd`, `cp`, `mv`, `rm`, `mkdir`, `touch` |
+| Viewing files | `cat`, `less`, `head`, `tail`, `wc`            |
+| Disk          | `df`, `du`                                     |
+| Search        | `grep`, `find`, `locate`                       |
+| System info   | `uname`, `uptime`, `top`, `htop`, `who`, `id`  |
+
+
+
+🔹 3. Users, Groups & Permissions
+| Task                 | Commands                                  |
+| -------------------- | ----------------------------------------- |
+| Users                | `adduser`, `usermod`, `passwd`, `deluser` |
+| Groups               | `groupadd`, `usermod -aG`                 |
+| Permissions          | `chmod`, `chown`, `ls -l`                 |
+| SUID/SGID/Sticky bit | Advanced permission flags                 |
+
+🎯 Learn:
+  Octal notation (e.g. chmod 755)
+  chown user:group file
+
+🔹 4. Shell Scripting (bash)
+| Feature      | Examples                      |
+| ------------ | ----------------------------- |
+| Variables    | `VAR=value`                   |
+| Conditionals | `if`, `else`, `elif`          |
+| Loops        | `for`, `while`                |
+| Functions    | `my_func() { echo "hello"; }` |
+| Arguments    | `$1`, `$2`, etc.              |
+
+🔧 Create:
+    #!/bin/bash
+    echo "Hello $USER"
+
+🔹 5. Package Management
+| OS            | Commands            |
+| ------------- | ------------------- |
+| Debian/Ubuntu | `apt`, `dpkg`       |
+| RedHat/CentOS | `yum`, `dnf`, `rpm` |
+| Arch          | `pacman`            |
+
+🧪 Try:
+  sudo apt update
+  sudo apt install tree
+
+🔹 6. Process Management
+| Command                    | Purpose                    |
+| -------------------------- | -------------------------- |
+| `ps`, `top`, `htop`        | View running processes     |
+| `kill`, `killall`, `pkill` | Terminate processes        |
+| `nice`, `renice`           | Priority management        |
+| `jobs`, `bg`, `fg`         | Background/foreground jobs |
+
+🔹 7. Networking
+| Command                 | Purpose                |
+| ----------------------- | ---------------------- |
+| `ip a` / `ifconfig`     | View interfaces        |
+| `ping`, `curl`, `wget`  | Test connectivity      |
+| `netstat`, `ss`, `lsof` | Open ports/connections |
+| `scp`, `rsync`          | Copy over network      |
+| `ssh`                   | Remote login           |
+
+🧪 Try:
+ping google.com
+curl ifconfig.me
+
+🔹 8. Disk & Storage Management
+| Task       | Commands                        |
+| ---------- | ------------------------------- |
+| Disk usage | `df -h`, `du -sh`               |
+| Mounting   | `mount`, `umount`, `/etc/fstab` |
+| Partitions | `lsblk`, `fdisk`, `parted`      |
+
+🔹 9. System Logs & Journal
+| Command                   | Purpose                    |
+| ------------------------- | -------------------------- |
+| `journalctl`              | View system logs (Systemd) |
+| `tail -f /var/log/syslog` | Live logs                  |
+| `dmesg`                   | Kernel logs                |
+
+🧪 Try:
+journalctl -xe
+
+🔹 10. Cron Jobs & Scheduling
+Automate tasks using:
+crontab -e
+
+Syntax:
+* * * * * /path/to/script.sh
+
+
