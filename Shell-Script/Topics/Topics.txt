@@ -1,0 +1,20 @@
+1. Shebang (#!): Specifies the interpreter (e.g., #!/bin/bash).
+2. Comments: Lines starting with # are ignored by the shell.
+3. Variables: Used to store data (name="Ajay").
+4. System Variables: Predefined variables like $USER, $HOME.
+5. Input/Output: Use read for input, echo for output.
+6. Command Line Arguments: Accessed via $1, $2, etc.
+7. Assign Command Output: Use $(command) or backticks.
+8. Read-only Variables: Use readonly to prevent changes.
+9. String Manipulation: Substrings, case conversion, etc.
+10. Arithmetic Operations: Use $((expression)).
+11. Functions: Define reusable code blocks.
+12. Local Variables: Use local inside functions.
+13. Control Structures: if, elif, else, case, loops (for, while, until).
+14. Operators: Logical (&&, ||, !), comparison (-eq, -ne, -lt, etc.).
+15. File Tests: Check file existence, type, permissions.
+16. Return Status: $? gives the exit status of the last command.
+17. Escape Sequences: Use -e with echo for newlines, tabs, colors.
+18. Break/Continue: Control loop execution.
+19. Select: Create simple menus.
+20. Project Structure: Organize scripts and files.
