@@ -1,0 +1,149 @@
+🌐 Linux Networking – Basics to Advanced
+  This list is organized from beginner to advanced, so you can level up step by step.
+
+✅ Networking Basics
+  1. 🔹 Check IP Address & Interfaces
+
+    | Command             | Purpose                                        |
+    | ------------------- | ---------------------------------------------- |
+    | `ip a` or `ip addr` | Show all interfaces and IPs                    |
+    | `ifconfig` (older)  | Display network configuration                  |
+    | `hostname -I`       | Show current IP                                |
+    | `nmcli`             | Network Manager CLI (Ubuntu GUI-based distros) |
+
+    🧪 Try:
+      ip a
+      hostname -I
+
+  2. 🔹 Check Connectivity
+    | Command            | Purpose                     |
+    | ------------------ | --------------------------- |
+    | `ping`             | Test if a host is reachable |
+    | `traceroute`       | Show route packets take     |
+    | `host`, `nslookup` | DNS resolution              |
+    | `dig`              | Advanced DNS tool           |
+
+    🧪 Try:
+      ping google.com
+      traceroute openai.com
+
+  3. 🔹 Download from Internet
+    | Command | Purpose                    |
+    | ------- | -------------------------- |
+    | `curl`  | Download content from URLs |
+    | `wget`  | Simple file downloader     |
+
+    🧪 Try:
+      curl https://example.com
+      wget https://example.com/file.zip
+
+  4. 🔹 View Open Ports & Services
+    | Command         | Purpose                       |
+    | --------------- | ----------------------------- |
+    | `netstat -tuln` | List open ports (TCP/UDP)     |
+    | `ss -tuln`      | Faster alternative to netstat |
+    | `lsof -i`       | List processes using network  |
+    | `nmap`          | Scan ports on a remote system |
+    
+    🧪 Try:
+      ss -tuln
+      lsof -i :22    # See what’s using port 22
+
+  5. 🔹 SSH & Remote Access
+    | Command         | Purpose                 |
+    | --------------- | ----------------------- |
+    | `ssh user@host` | Secure shell access     |
+    | `scp`           | Copy files over SSH     |
+    | `rsync`         | Efficient sync over SSH |
+    
+    🧪 Try (from another server or localhost):
+      ssh user@remote_ip
+      scp file.txt user@remote:/path/
+
+🚀 Intermediate Networking
+
+  6. 🔹 Host & DNS Configuration
+    /etc/hosts – Manual hostname to IP mapping
+    /etc/resolv.conf – DNS nameserver config
+    hostnamectl – Set/view system hostname
+
+  7. 🔹 Configure Network Interfaces
+    Static IP config via:
+      /etc/network/interfaces (older systems)
+      netplan config (Ubuntu 18.04+)
+      nmcli for GUI-based systems
+
+  8. 🔹 Firewalls & Rules
+    | Tool        | Purpose                   |
+    | ----------- | ------------------------- |
+    | `ufw`       | Simple firewall on Ubuntu |
+    | `iptables`  | Advanced packet filtering |
+    | `firewalld` | CentOS/RHEL firewall tool |
+
+    🧪 Try:
+      sudo ufw status
+      sudo ufw allow 22/tcp
+
+  9. 🔹 System Ports and Services
+    Common system ports:
+      22 → SSH
+      80 → HTTP
+      443 → HTTPS
+      3306 → MySQL
+    Use /etc/services for more
+
+
+🧠 Advanced Networking
+
+  10. 🔹 Port Forwarding & NAT
+    Using iptables or firewalld to route traffic
+    Useful for local dev → production setups
+
+  11. 🔹 Network Namespaces (Isolation)
+    Create isolated network environments inside a system:
+      ip netns add test-ns
+
+  12. 🔹 Virtual Networking
+    Use tools like:
+      bridge-utils
+      veth pairs
+      tap/tun interfaces
+
+  13. 🔹 DNS Servers
+    Set up DNS using:
+      bind9
+      dnsmasq
+
+  14. 🔹 Proxy & Tunneling
+    Use:
+      ssh -L for local port forwarding
+      ngrok for public tunnels
+      socat for port bridging
+
+  15. 🔹 Network Troubleshooting
+    | Tool        | Use                      |
+    | ----------- | ------------------------ |
+    | `tcpdump`   | Capture network packets  |
+    | `wireshark` | GUI packet analysis      |
+    | `ip route`  | Routing table            |
+    | `route`     | (older) view/edit routes |
+    
+    🧪 Try:
+      ip route
+      sudo tcpdump -i any port 80
+
+  📚 Bonus: Useful Tools
+  | Tool          | Use                                 |
+  | ------------- | ----------------------------------- |
+  | `nmap`        | Scan for open ports on remote hosts |
+  | `iperf3`      | Network speed testing               |
+  | `netcat (nc)` | Port scanning and testing           |
+  | `ethtool`     | Ethernet interface settings         |
+
+
+
+
+
+
+
+
