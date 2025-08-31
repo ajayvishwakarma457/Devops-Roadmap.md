@@ -1,0 +1,41 @@
+🔑 What is /tmp in Ubuntu?
+  /tmp = temporary directory.
+  Used by the system and applications to store temporary files (cache, sockets, session data, etc.).
+  Any user or process can write here, but only root can delete other users’ files.
+  By default, the contents of /tmp are deleted at reboot (or after some time, depending on system settings).
+
+📂 Components inside /tmp
+  There’s no fixed structure — it depends on what apps/services are running. Typical contents include:
+
+1. Application temporary files
+  Programs create scratch files here while running.
+  Examples:
+    Editors like vim or nano create swap/recovery files (/tmp/filename.swp).
+    Web browsers create temp files when downloading.
+    Package managers (like apt) may store temporary install data here.
+
+2. Sockets & Inter-process communication (IPC)
+  Many daemons (background services) place Unix domain sockets in /tmp.
+  Example:
+    /tmp/.X11-unix/ → socket for X11 display server
+    /tmp/mysql.sock → MySQL socket (if configured here)
+
+3. Lock files
+  Some programs use lock files in /tmp to prevent multiple instances.
+  Example: /tmp/.X0-lock (X server lock).
+
+4. Temporary session files
+  When you run installers, extract archives, or compile software, temporary working directories often get created in /tmp.
+
+⚠️ Important Notes
+  /tmp is world-writable (drwxrwxrwt), with the sticky bit set:
+    ls -ld /tmp
+    drwxrwxrwt  9 root root  4096 Aug 31 16:20 /tmp
+  🔹 The t means: users can only delete their own files, not others.
+  If /tmp fills up, programs may crash or misbehave (since they can’t write temporary files).
+  Some systems use tmpfs (RAM-based filesystem) for /tmp, meaning its contents live in memory for speed, and vanish at reboot.
+
+✅ In short:
+  /tmp = scratch space for apps & system.
+  Holds temporary files, sockets, and locks.
+  Gets cleaned on reboot (or periodically).
