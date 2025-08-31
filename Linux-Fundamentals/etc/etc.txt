@@ -1,0 +1,44 @@
+On Ubuntu (and Linux in general), the /etc directory is one of the most important system folders.
+It is often called the system configuration directory because it contains all the system-wide configuration files and settings.
+
+Here’s a breakdown of the major components inside /etc:
+
+🔑 Key components in /etc
+
+  1. System configuration files
+    /etc/passwd → User account information
+    /etc/shadow → Password hashes for users (only root can read)
+    /etc/group → Groups information
+    /etc/hostname → System’s hostname
+    /etc/hosts → Local hostname ↔ IP address mappings
+    /etc/resolv.conf → DNS resolver settings
+    /etc/fstab → Disk partitions and mount points
+
+ 2. Network configuration
+    /etc/network/ → Network interface configurations (older system)
+    /etc/netplan/ → Newer Ubuntu versions use Netplan for network setup
+    /etc/hosts.allow & /etc/hosts.deny → TCP Wrappers for access control
+
+3. Service and Daemon configs
+    /etc/systemd/ → systemd service files & settings
+    /etc/init.d/ → Old-style init scripts
+    /etc/cron.* → Cron jobs (scheduled tasks)
+    /etc/ssh/sshd_config → SSH server configuration
+
+4. Application configs
+    /etc/nginx/ → NGINX configs
+    /etc/apache2/ → Apache configs
+    /etc/mysql/ → MySQL/MariaDB configs
+    /etc/docker/ → Docker configs
+    /etc/gitconfig → System-wide Git config
+
+5. Security-related configs
+    /etc/sudoers → Sudo permissions
+    /etc/apt/ → APT package manager configs (sources list, keys)
+    /etc/pam.d/ → Pluggable Authentication Modules (login security)
+    /etc/ssl/ → SSL certificates
+
+6. Miscellaneous configs
+    /etc/profile → System-wide environment variables
+    /etc/bash.bashrc → Bash shell defaults
+    /etc/motd → Message of the Day (shows at login)
